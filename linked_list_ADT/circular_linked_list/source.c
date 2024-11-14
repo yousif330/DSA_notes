@@ -104,8 +104,6 @@ void delete_node(Node **head, int index)
         Node *p = *head;
         if (index == 1)
         {
-            if (*head == NULL)
-                return;
             while (p->next != *head)
             {
                 p = p->next;
@@ -152,7 +150,7 @@ int main()
     array_to_cl(&list1, a, 8);
     display(list1);
 
-    delete_node(&list1, 1);
+    delete_node(&list1, 3);
     display(list1);
 
     free_cl(list1);

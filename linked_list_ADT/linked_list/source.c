@@ -346,6 +346,22 @@ int is_loop(Node **head)
     return 0;
 }
 
+int get_middle(Node *head)
+{
+    Node *p = head, *q = head;
+
+    while (p && p->ptr)
+    {
+        q = q->ptr;
+        p = p->ptr;
+        if (p)
+        {
+            p = p->ptr;
+        }
+    }
+    return q->data;
+}
+
 void free_list(Node **head)
 {
     Node *p;
