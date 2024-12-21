@@ -65,6 +65,17 @@ int dequeue(Queue *q)
     }
 }
 
+void free_stack(Node **head)
+{
+    Node *p = NULL;
+    while (*head)
+    {
+        p = *head;
+        *head = (*head)->next;
+        free(p);
+    }
+}
+
 int main()
 {
     Queue q = {0};
@@ -89,4 +100,8 @@ int main()
     printf("%d\n", dequeue(&q));
     printf("%d\n", dequeue(&q));
     printf("%d\n", dequeue(&q));
+
+    free_stack(&q.s1);
+    free_stack(&q.s2);
+    return 0;
 }
